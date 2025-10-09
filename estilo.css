@@ -19,7 +19,22 @@
     transition: .7s;
 }
 body.light{
+    --bg-dark: hsl(0 0% 0%);
+    --bg: hsl(0 0% 5%);
+    --bg-light: hsl(0 0% 10%);
+    --text: hsl(0 0% 95%);
+    --text-muted: hsl(0 0% 70%);
+    --bx-shadow: #0063ddba;
+    --yellow: rgb(255, 255, 255);
     transition: .7s;
+}
+@font-face {
+    font-family: 'poppins';
+    src: url(fontes/Poppins/Poppins-Regular.ttf);
+}
+@font-face {
+    font-family: 'lato';
+    src: url(fontes/Lato/Lato-Regular.ttf);
 }
 body{
     background-color: var(--bg-dark);
