@@ -21,14 +21,6 @@
 body.light{
     transition: .7s;
 }
-@font-face {
-    font-family: 'poppins';
-    src: url(fontes/Poppins/Poppins-Regular.ttf);
-}
-@font-face {
-    font-family: 'lato';
-    src: url(fontes/Lato/Lato-Regular.ttf);
-}
 body{
     background-color: var(--bg-dark);
     color: var(--text);
