@@ -1,9 +1,10 @@
 
-
 // Mudar tema
 function toggle() {
     document.body.classList.toggle("light");
 }
+
+
 
 // abrir e fechar menu
 

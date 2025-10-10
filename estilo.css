@@ -43,7 +43,7 @@ body{
     transition: background-color .7s, color .7s;
 }
 header{
-    background-color: #0073ff94;
+    background-color: #002a5e94;
     color: white;
     width: 100%;
     display: flex;
@@ -88,6 +88,22 @@ header nav ul{
     display: flex;
     flex-direction: row;
 }
+nav li::after{
+    content: " ";
+    width: 0px;
+    height: 4px;
+    background-image: linear-gradient(45deg , var(--principal), var(--secundario));
+    position: absolute;
+    bottom: 10;
+    left: 11;
+    transition: width 0.3s;
+}
+nav li:hover::after{
+    width: 40px;
+}
+/* nav li:hover{
+    color: #ff0000;
+} */
 header nav ul li a{
     display: flex;
     flex-direction: column;
@@ -102,9 +118,6 @@ header nav ul li a{
 header nav i{
     display: block;
 }
-nav p:hover{
-    text-decoration: underline;
-}
 header .tema{
     background-color: var(--bg-dark);
     color: var(--secundario);
@@ -116,7 +129,6 @@ header .tema{
 }
 header .tema i{
     color: var(--yellow);
-    
 }
 
 
@@ -139,6 +151,11 @@ main h1, mark{
     /* font-size: 3.4em; */
     font-size: 7dvw;
     padding: 40px 0px 20px 20px;
+    
+}
+main h1 span{
+    color: var(--text-muted);
+    text-transform: uppercase;
 }
 main .sobre{
     display: flex;
@@ -146,12 +163,14 @@ main .sobre{
     background-color: var(--bg-light);
     border-radius: 20px;
     padding: 20px;
+    margin-bottom: 30px;
 }
 .sobre .resumo p{
     font-size: 1.1em;
     line-height: 1.5em;
     text-align: justify;
 }
+
 .resumo span{
     color: var(--secundario);
     font-family: 'lato';
@@ -159,10 +178,39 @@ main .sobre{
 #eu{
     font-size: 3em;
 }
+@keyframes flutuar {
+  0% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-15px);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+.flutuar {
+  margin-top: 30px;
+  animation: flutuar 3s infinite ease-in-out;
+}
+.sobre a{
+    background-color: var(--secundario);
+    color: var(--principal);
+    text-decoration: none;
+    border-radius: 0px 0px 15px 15px;
+    padding: 10px 228px;
+    width: 300px;
+    margin-top: 40px;
+    animation: flutuar 2s infinite ease-in-out;
+}
+.sobre i{
+    padding: 10px;
+}
 main .sobre .imagem img{
     width: auto;
     height: 250px;
 }
+
 .ferramentas ul{
     display: flex;
     flex-flow: row wrap;
@@ -171,6 +219,29 @@ main .sobre .imagem img{
 li{
     list-style: none;
     padding: 1px 10px;
+}
+.ferramentas li{
+    text-align: center;
+    list-style: none;
+    padding: 1px 10px;
+    margin: 7px;
+    border-radius: 5px;
+    background-color: var(--text);
+    border: 2px solid var(--bg);
+    color: var(--bg);
+    width: 100px;
+}
+.ferramentas li:hover{
+    cursor: pointer;
+    color: var(--secundario);
+    border: 1px solid var(--text);
+    background-color: var(--principal);
+    transition: .2s ease-in-out;
+    box-shadow: 0PX 0PX 5PX var(--secundario);
+}
+.ferramentas i{
+    padding-top: 5px;
+    font-size: 2em;
 }
 .rodape{
     display: grid;
@@ -186,8 +257,9 @@ li{
     font-weight: 300;
 }
 @media screen and (max-width: 660px){
-    header i, samp{
-        font-size: 2em;
+    header i{
+        font-size: 1.6em;
+        padding: 0px 10px;
     }
     header nav P{
         display: none;
