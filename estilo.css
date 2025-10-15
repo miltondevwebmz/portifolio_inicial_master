@@ -174,17 +174,13 @@ main {
 }
 main h1,
 mark {
-  width: fit-content;
-  background: linear-gradient(90deg, var(--bg-dark), var(--text));
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
   font-family: "lato";
   /* font-size: 3.4em; */
   font-size: 7dvw;
   padding: 40px 0px 20px 20px;
 }
 main h1 span {
-  /* color: var(--text-muted); */
+  color: var(--text-muted);
   text-transform: uppercase;
 }
 main .sobre {
@@ -316,7 +312,6 @@ li {
   main .sobre{
     display: flex;
     flex-direction: column-reverse;
-    background-color: red;
   }
   nav li:hover::after {
     width: 0;
