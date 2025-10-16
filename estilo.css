@@ -78,6 +78,7 @@ header .logo img {
 header .logo p {
   padding: 0px 5px;
   font-size: 1.3em;
+  transition: font-size .3s ease-in-out;
 }
 header .logo p::before {
   content: "Dev W";
@@ -173,7 +174,7 @@ main {
   z-index: 9;
 }
 main h1,
-mark {
+.trabalho {
   font-family: "lato";
   /* font-size: 3.4em; */
   font-size: 7dvw;
@@ -324,5 +325,11 @@ li {
   main .sobre .imagem img {
     width: auto;
     height: 350px;
+  }
+}
+@media screen and (max-width: 520px){
+  header .logo p {
+    font-size: 1em;
+    transition: font-size .3s ease-in-out;
   }
 }
