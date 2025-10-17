@@ -15,7 +15,7 @@
   --text: hsl(0 0% 5%);
   --text-muted: hsl(0 0% 30%);
   --bx-shadow: #dfdfdfba;
-  --yellow: yellow;
+  --hover-ul: hsla(213, 100%, 18%, 0.257);
   transition: 0.7s;
 }
 body.light {
@@ -25,7 +25,7 @@ body.light {
   --text: hsl(0 0% 95%);
   --text-muted: hsl(0 0% 70%);
   --bx-shadow: #0063ddba;
-  --yellow: rgb(255, 255, 255);
+  --hover-ul: hsla(213, 100%, 18%, 0.91);
   transition: 0.7s;
 }
 @font-face {
@@ -106,7 +106,7 @@ header nav ul {
 }
 header nav ul:hover{
   /* background-color: #002a5ee8; */
-  background-color: #002a5ee8;
+  background-color: var(--hover-ul);
   transition: .2s ease-in-out;
 }
 nav li:hover{
