@@ -9,13 +9,28 @@
   --principal: #d5dede;
   --secundario: #0071ff;
 
-  --bg-dark: hsl(0 0% 90%);
+  /* cores para linguagens */
+  --html: #e34c26;
+  --css: #264ed4;
+  --js: #f0db4f;
+  --bootstrap: #7952b3;
+  --php: #8892be;
+  --mysql: #00758f;
+  --flexbox: #0ea5e9;
+  --scss: #cd6799;
+  --less: #1d365d;
+  --github: #7f2f98;
+
+  /* temas */
+  --bg-dark: hsl(0, 0%, 90%);
   --bg: hsl(0 0% 95%);
   --bg-light: hsl(0 0% 100%);
   --text: hsl(0 0% 5%);
   --text-muted: hsl(0, 0%, 30%);
   --bx-shadow: #dfdfdfba;
   --hover-ul: hsla(213, 100%, 18%, 0.257);
+
+  --glow-hover: #00000080;
   transition: 0.7s;
 }
 body.light {
@@ -26,6 +41,8 @@ body.light {
   --text-muted: hsl(0 0% 70%);
   --bx-shadow: #0063ddba;
   --hover-ul: hsla(213, 100%, 18%, 0.91);
+
+  --glow-hover: #ffffff80;
   transition: 0.7s;
 }
 @font-face {
@@ -162,7 +179,8 @@ body .tema i {
 
 
 main {
-  background-color: var(--bg-dark);
+  background-color: transparent;
+  /* background-color: var(--bg-dark); */
   padding: 15px;
   margin: 0 auto;
   max-width: 1000px;
@@ -203,7 +221,7 @@ main .sobre {
   font-family: "lato";
 }
 #eu {
-  font-size: 3em;
+  font-size: 2.3em;
 }
 @keyframes flutuar {
   0% {
@@ -216,11 +234,12 @@ main .sobre {
     transform: translateY(0);
   }
 }
-.flutuar {
+.resumo .flutuar {
+  width: 100%;
   margin-top: 30px;
   animation: flutuar 3s infinite ease-in-out;
 }
-.sobre a {
+.sobre .flutuar a {
   background-color: var(--secundario);
   color: var(--principal);
   text-decoration: none;
@@ -230,9 +249,18 @@ main .sobre {
   animation: flutuar 2s infinite ease-in-out;
 }
 
-/* Make the "Ver curriculo" link fill its container and center the text */
-.resumo .flutuar {
-  width: 100%;
+.pontos{
+  display: flex;
+  justify-content: center;
+  gap: 6px;
+  margin-top: 0px;
+}
+.pontos span{
+  width: 7px;
+  height: 7px;
+  border-radius: 50px;
+  background-color: #0071ff;
+  display: inline-block;
 }
 .resumo .flutuar a {
   display: block; /* allow width to apply */
@@ -246,11 +274,52 @@ main .sobre {
 .sobre i {
   padding: 10px;
 }
+main .sobre .imagem {
+  padding-left: 20px;
+}
 main .sobre .imagem img {
   width: auto;
-  height: 250px;
+  height: 370px;
+  border-radius: 50%;
+  background-color: var(--text-muted);
+  
 }
+main .sobre .resumo .social{
+  display: flex;
+  flex-direction: row;
+  background-color: transparent;
+  justify-content: space-evenly;
+  align-items: center;
+}
+.social{
+  margin: 10px 0px -10px 0px;
+}
+.social a{
+  border-radius: 10px;
+  font-size: 1.3rem;
+}
+.social a:hover{
+  scale: 1.1;
+  box-shadow: 0 0 15px var(--glow-hover);
 
+  transition: .2s ease-in-out;
+}
+.social .mail{
+  color: #EA4335;
+  border: 1px solid #EA4335; 
+}
+.social .whatsapp{
+  color: rgb(15, 195, 15);
+  border: 1px solid rgb(15, 195, 15);
+}
+.social .github{
+  color:  var(--github);
+  border: 1px solid  var(--github);
+}
+.social .linked{
+  color: rgb(0, 136, 255);
+  border: 1px solid rgb(0, 136, 255);
+}
 .ferramentas ul {
   display: flex;
   flex-flow: row wrap;
@@ -284,6 +353,203 @@ li {
   padding-top: 5px;
   font-size: 2em;
 }
+
+/*----------------------- SECÇÃO PROJECTOS ------------------------*/
+
+main section.projectos{
+  /* background-color: var(--bg); */
+  border-radius: 25px;
+  margin: 15px 1px;
+  padding: 10px;
+}
+.projectos .card{
+  background-color:var(--bg-light);
+  padding: 15px 1px;
+  margin: 9px 1px;
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-around;
+  border-radius: 9px;
+
+}
+
+.cards {
+  background-color: var(--bg-dark);
+  margin: 7px;
+  border-radius: 9px;
+  flex: 1 0 300px;
+  
+  animation: rolagem linear;
+  animation-timeline: view();
+  animation-range: entry 0% cover 10%;
+  transition: 0.3s ease;
+}
+.cards:hover{
+  /* scale: 1.05; */
+  transform: translateY(-5px);
+  transition: .2s ease-in-out;
+  cursor: grab;
+}
+/* .card .cards:nth-child(4){
+  flex: 0 1 300px;
+} */
+.cards img{
+  width: 100%;
+  height: auto;
+  border-radius: 9px 9px 0px 0px;
+}
+.cards .descricao{
+  text-align: center;
+  font-size: 0.9em;
+  padding: 1px 1px;
+}
+.descricao ul{
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: center;
+  align-items: center;
+  height: 60px;
+  gap: 5px;
+  padding: 0;
+  margin: 0;
+}
+.descricao li{
+  list-style: none;
+  position: relative;
+  padding-left: 12px;
+  border-radius: 10px;
+  color: #000;
+}
+.descricao li:nth-child(1) {
+  background-color: var(--html);
+}
+.descricao li:nth-child(2) {
+  background-color: var(--css);
+  color: white;
+}
+.descricao li:nth-child(3) {
+  background-color: var(--js);
+}
+.descricao li:nth-child(4) {
+  background-color: var(--bootstrap);
+  color: white;
+}
+.descricao li:nth-child(5) {
+  background-color: var(--php);
+}
+.descricao li:nth-child(6) {
+  background-color: var(--mysql);
+  color: white;
+}
+.descricao li:nth-child(7) {
+  background-color: var(--flexbox);
+}
+.descricao li:nth-child(8) {
+  background-color: var(--less);
+  color: white;
+}
+.descricao p{
+  line-height: 1.3;
+}
+.cards .botao{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  margin: 10px 1px;
+}
+.botao a{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  background-color: var(--text);
+  padding: 1px;
+  border-radius: 9px;
+  width: 100px;
+  text-align: center;
+  color: var(--bg-light);
+}
+.botao a:hover{
+  cursor: pointer;
+  background-color: var(--text-muted);
+  color: var(--bg-dark);
+
+  transition: .2s ease-out;
+}
+.botao i{
+  padding-right: 10px;
+  font-size: 1.2rem;
+}
+
+
+/* ----------------------------servicos------------------------- */
+
+.item-servico {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 20px;
+  border-color: yellow;
+  padding: 20px 5px;
+}
+.item {
+  text-align: center;
+  padding: 15px;
+  border-radius: 10px;
+  background-color: var(--bg-light);
+  border: 1px solid var(--bg);
+  box-shadow: 0 0 5px var(--text-muted);
+
+  animation: rolagem linear;
+  animation-timeline: view();
+  animation-range: entry 0% cover 20%;
+}
+
+@keyframes rolagem {
+  from {
+    opacity: 0;
+    scale: .5;
+  }
+  to {
+    opacity: 1;
+    scale: 1;
+  }
+}
+
+.item:hover{
+  transform: translateY(-5px);
+  transition: 0.3s ease;
+}
+.item i {
+  /* color: var(--secundario); */
+  font-size: 2.3rem;
+  padding: 10px;
+}
+.item h3{
+  color: var(--secundario);
+  font-family: "lato";
+  margin-bottom: 15px;
+}
+.item p{
+  margin-bottom: 10px;
+}
+.item .button {
+  font-family: "lato";
+  padding: 10px;
+  border-radius: 7px;
+  background-color: var(--secundario);
+  color: var(--principal);
+}
+.item .button:hover{
+  cursor: pointer;
+  background-color: var(--text-muted);
+  color: var(--bg);
+
+  animation: .3s ease;
+}
+
+
+/*----------------------------- RODAPÉ --------------------------- */
 .rodape {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -292,11 +558,17 @@ li {
   display: flex;
   justify-content: center;
   text-align: center;
-  /* background-color: var(--cor-1); */
+  background-color: var(--bg-light);
+  color: var(--text);
   font-size: 1.1em;
+  width: 100%;
+  border: 1px solid black;
+  box-shadow: 0px -8px 8px var(--text-muted);
   padding: 10px;
   font-weight: 300;
 }
+
+/* media para telefone */
 @media screen and (max-width: 660px) {
   header i {
     font-size: 1.6em;
@@ -323,9 +595,23 @@ li {
     scale: 1.09;
     transition: .1s ease-in-out;
   }
+  main .sobre .imagem {
+  padding-left: 0px;
+}
   main .sobre .imagem img {
     width: auto;
-    height: 350px;
+    height: 300px;
+    border-radius: 0%;
+    background: none;
+  }
+    .sobre .resumo p:nth-child(1){
+    text-align: left;
+  }
+  .sobre .resumo p:nth-child(1) #eu{
+    font-size: 2em;
+  }
+  main .trabalho{
+    text-align: center;
   }
 }
 @media screen and (max-width: 520px){

@@ -1,0 +1,4 @@
+jogo da velha - 1280 x 800 
+jogo do click - 769 x 517
+pong simples - 899 x 676
+portifolio - 1104 x 718
