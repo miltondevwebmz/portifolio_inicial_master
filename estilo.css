@@ -526,12 +526,12 @@ main section.projectos{
   padding: 10px;
 }
 .item h3{
-  color: var(--secundario);
   font-family: "lato";
   margin-bottom: 15px;
 }
 .item p{
   margin-bottom: 10px;
+  color: var(--text-muted);
 }
 .item .button {
   font-family: "lato";
@@ -543,7 +543,7 @@ main section.projectos{
 .item .button:hover{
   cursor: pointer;
   background-color: var(--text-muted);
-  color: var(--bg);
+  color: var(--bg-light);
 
   animation: .3s ease;
 }
