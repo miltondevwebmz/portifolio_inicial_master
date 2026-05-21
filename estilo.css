@@ -23,27 +23,33 @@
 
   /* temas */
   --bg-dark: hsl(0, 0%, 90%);
-  --bg: hsl(0 0% 95%);
-  --bg-light: hsl(0 0% 100%);
-  --text: hsl(0 0% 5%);
+  --bg: hsl(0, 0%, 95%);
+  --bg-light: hsl(0, 0%, 100%);
+  --text: hsl(0, 0%, 5%);
   --text-muted: hsl(0, 0%, 30%);
   --bx-shadow: #dfdfdfba;
   --hover-ul: hsla(213, 100%, 18%, 0.257);
-
   --glow-hover: #00000080;
-  transition: 0.7s;
+
+  --mostrar: block;
+  --ocultar: none;
+
+  transition: all 0.4s;
 }
 body.light {
-  --bg-dark: hsl(0 0% 0%);
-  --bg: hsl(0 0% 5%);
-  --bg-light: hsl(0 0% 10%);
+  --bg-dark: hsl(0, 0%, 0%);
+  --bg: hsl(0, 0%, 5%);
+  --bg-light: hsl(0, 0%, 10%);
   --text: hsl(0 0% 95%);
   --text-muted: hsl(0 0% 70%);
   --bx-shadow: #0063ddba;
   --hover-ul: hsla(213, 100%, 18%, 0.91);
-
   --glow-hover: #ffffff80;
-  transition: 0.7s;
+
+  --mostrar: none;
+  --ocultar: block;
+
+  transition: all 0.4s;
 }
 @font-face {
   font-family: "poppins";
@@ -53,8 +59,19 @@ body.light {
   font-family: "lato";
   src: url(fontes/Lato/Lato-Regular.ttf);
 }
+@font-face {
+  font-family: "inter";
+  src: url(fontes/Inter/Inter_18pt-Regular.ttf);
+}
 h2{
   text-align: center;
+}
+.padding{
+  margin: 45px 0px 30px 0px;
+}
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 90px;
 }
 body {
   background-color: var(--bg-dark);
@@ -64,6 +81,7 @@ body {
 }
 header {
   background-color: #002a5e94;
+  backdrop-filter: blur(2px);
   color: white;
   width: 100%;
   display: flex;
@@ -85,12 +103,6 @@ header .logo {
   align-items: center;
   font-size: 1.3em;
   user-select: none;
-}
-header .logo img {
-  width: 50px;
-  height: auto;
-  background-color: var(--principal);
-  border-radius: 50%;
 }
 header .logo p {
   padding: 0px 5px;
@@ -117,6 +129,7 @@ header .logo p::after {
 header nav ul {
   display: flex;
   flex-direction: row;
+  align-items: center;
   border-radius: 10px 10px 25px 10px;
   padding: 5px 20px;
   box-shadow: 1px 1px 5px var(--text-muted);
@@ -141,6 +154,10 @@ nav li::after {
   left: 11;
   transition: width 0.3s;
 }
+nav li:nth-child(6):after{
+  content: " ";
+  background: none;
+}
 nav li:hover::after {
   width: 40px;
   color: white;
@@ -156,28 +173,32 @@ header nav ul li a {
 }
 header nav i {
   display: block;
+  position: relative;
 }
-body .tema {
-  position: fixed;
-  z-index: 99999;
-  bottom: 0.5em;
-  right: 0.8em;
+nav li .tema img{
+  font-size: 1.2rem;
   background-color: var(--secundario);
-  /* color: var(--secundario); */
-  font-size: 1.8em;
+  padding: 7px;
+  text-align: center;
   border-radius: 50%;
   cursor: pointer;
-  box-shadow: 0px 0px 8px var(--text-muted);
-  animation: flutuar 5s infinite;
 }
-body .tema i {
-  font-size: 1.2em;
-  color: white;
-  padding: 1px 1px;
-  margin: 5px;
+.tema .fa-moon{
+  display: var(--ocultar);
 }
-
-
+.tema .fa-sun{
+  display: var(--mostrar);
+}
+nav .tema li::after {
+  content: " ";
+  width: 0px;
+  height: 4px;
+  background-image: linear-gradient(45deg, var(--bg), var(--text));
+  position: absolute;
+  bottom: 10;
+  left: 11;
+  transition: width 0.3s;
+}
 main {
   background-color: transparent;
   /* background-color: var(--bg-dark); */
@@ -186,7 +207,7 @@ main {
   max-width: 1000px;
   width: 100%;
   position: absolute;
-  top: 100px;
+  top: 30px;
   left: 50%;
   transform: translateX(-50%);
   z-index: 9;
@@ -196,7 +217,7 @@ main h1,
   font-family: "lato";
   /* font-size: 3.4em; */
   font-size: 7dvw;
-  padding: 40px 0px;
+  padding: 40px 0px 20px 0px;
 }
 
 main h1:nth-child(2),
@@ -204,11 +225,24 @@ main h1:nth-child(2),
   /* background-color: red; */
   text-align: center;
 }
+main h1.dev{
+  overflow: hidden;
+  width: 13ch;
+  white-space: nowrap;
+  animation: digitar 2.4s steps(13);
+}
+@keyframes digitar{
+  from {
+    width: 0;
+  }
+}
+
 main h1 span {
   color: var(--text-muted);
   text-transform: uppercase;
+  position: relative;
 }
-main .sobre {
+main .inicial {
   display: flex;
   flex-direction: row;
   align-items: center;
@@ -217,7 +251,7 @@ main .sobre {
   padding: 20px;
   margin-bottom: 30px;
 }
-.sobre .resumo p {
+.inicial .resumo p {
   font-size: 1.1em;
   line-height: 1.5em;
   text-align: justify;
@@ -246,7 +280,11 @@ main .sobre {
   margin-top: 30px;
   animation: flutuar 3s infinite ease-in-out;
 }
-.sobre .flutuar a {
+.resumo .flutuar a:hover{
+  background-color: #00469d;
+  box-shadow: 0 0 10px var(--glow-hover);
+}
+.inicial .flutuar a {
   background-color: var(--secundario);
   color: var(--principal);
   text-decoration: none;
@@ -273,25 +311,38 @@ main .sobre {
   display: block; /* allow width to apply */
   width: 100%; /* fill the parent (.resumo) */
   box-sizing: border-box; /* include padding in width */
-  text-align: center; /* center the label */
-  padding: 10px 1px; /* slightly larger tap target */
+  text-align: center;
+  padding: 10px 1px;
   font-size: 1.05em;
   border-radius: 0px 0px 15px 15px;
 }
-.sobre i {
+.inicial i {
   padding: 10px;
 }
-main .sobre .imagem {
+main .inicial .imagem {
   padding-left: 20px;
+  position: relative;
 }
-main .sobre .imagem img {
+/* .imagem span{
+  position: absolute;
+  padding: 5px;
+  font-size: .75rem;
+  border-radius: 8px;
+  border: 2px solid var(--text);
+  bottom: -10px;
+  right: 5px;
+  background-color: var(--bg-light);
+  z-index: 99999;
+} */
+main .inicial .imagem img {
   width: auto;
   height: 370px;
   border-radius: 50%;
+  outline: 4px solid var(--text-muted);
+  border: 4px solid var(--bg-light);
   background-color: var(--text-muted);
-  
 }
-main .sobre .resumo .social{
+main .inicial .resumo .social{
   display: flex;
   flex-direction: row;
   background-color: transparent;
@@ -327,6 +378,57 @@ main .sobre .resumo .social{
   color: rgb(0, 136, 255);
   border: 1px solid rgb(0, 136, 255);
 }
+
+/* -----------ferramentas----------- */
+.sobre .minha-info{
+  display: grid;
+  grid-template-columns: 55% 45%;
+  align-items: center;
+  justify-content: center;
+}
+.minha-info .informacao{
+  padding: 10px;
+  text-align: justify;
+  line-height: 1.9;
+  text-indent: 20px;
+  
+}
+.sobre .dif-itens{
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+.minha-info .informacao span{
+  color: var(--mysql);
+}
+.sobre .dif-itens p{
+  font-size: .9rem;
+}
+.diferenciais h3{
+  margin-left: 20px;
+  border-bottom: 4px dotted var(--text-muted);
+  width: fit-content;
+}
+.dif-itens p {
+  background-color: var(--secundario);
+  padding: 10px;
+  margin: 10px;
+  border-radius: 8px;
+  border: 1px solid var(--bg);
+  color: var(--principal);
+  cursor: pointer;
+}
+.dif-itens i{
+  margin-right: 8px;
+}
+.dif-itens p:hover{
+  transform: translateY(-5px);
+  transition: 0.2s ease-in-out;
+  border: 1px solid var(--secundario);
+  color: var(--secundario);
+  background-color: var(--principal);
+}
+
+/* -----------ferramentas----------- */
 .ferramentas ul {
   display: flex;
   flex-flow: row wrap;
@@ -362,7 +464,6 @@ li {
 }
 
 /*----------------------- SECÇÃO PROJECTOS ------------------------*/
-
 main section.projectos{
   /* background-color: var(--bg); */
   border-radius: 25px;
@@ -397,9 +498,6 @@ main section.projectos{
   transition: .2s ease-in-out;
   cursor: grab;
 }
-/* .card .cards:nth-child(4){
-  flex: 0 1 300px;
-} */
 .cards img{
   width: 100%;
   height: auto;
@@ -555,7 +653,6 @@ main section.projectos{
   animation: .3s ease;
 }
 
-
 /*----------------------------- RODAPÉ --------------------------- */
 .rodape {
   display: grid;
@@ -566,7 +663,10 @@ main section.projectos{
   background-color: var(--bg);
   padding: 12px;
   color: var(--text);
-  border: 1px solid rgba(126, 126, 126, 0.152);
+  border: 2px solid rgba(126, 126, 126, 0.152);
+}
+.rodape .itens:nth-child(1){
+  order: 3;
 }
 .rodape .itens ul{
   line-height: 2;
@@ -587,7 +687,6 @@ main section.projectos{
   padding: 2px 10px;
   box-shadow: 0px 0px 8px var(--glow-hover);
   border-radius: 10px;
-
   transition: .2s ease-in-out;
 }
 .rodape .itens:nth-child(2) ul li:nth-child(1) a{
@@ -597,7 +696,6 @@ main section.projectos{
   background: linear-gradient(45deg, #F58529, #DD2A7B, #8134AF, #515BD4);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
-
 }
 .rodape .itens:nth-child(2) ul li:nth-child(3) a{
   color: rgb(0, 136, 255);
@@ -608,9 +706,12 @@ main section.projectos{
 .rodape .itens:nth-child(2) ul li:nth-child(5) a{
   color:  rgb(15, 195, 15);
 }
+.rodape .itens:nth-child(2) ul li:hover{
+  background-color: var(--text-muted);
+}
 .direitos {
   text-align: center;
-  margin: 15px 1px 5px 1px;
+  margin: 20px 1px 5px 1px;
   background-color: var(--bg-dark);
   color: var(--text);
   width: 100%;
@@ -633,10 +734,48 @@ main section.projectos{
 }
 
 /* media para telefone */
+
+@media screen and (max-width: 357px){
+  li{
+    padding: 0 4px;
+  }
+   header .logo p {
+    font-size: 1.12rem;
+    transition: font-size .3s ease-in-out;
+  }
+  header nav i {
+    font-size: 1.05rem;
+    padding: 0px 5px;
+  }
+  header nav ul{
+    padding: 0 0;
+  }
+  .tema img{
+    font-size: .2rem;
+  }
+}
+
+@media (min-width: 358px) and (max-width: 500px) {
+  li{
+    padding: 0 5px;
+  }
+  header .logo p {
+    font-size: 1.35rem;
+    transition: font-size .3s ease-in-out;
+  }
+  header nav i {
+    font-size: 1rem;
+    padding: 0px 5px;
+  }
+  header nav ul{
+    padding: 0 0;
+  }
+}
+
 @media screen and (max-width: 660px) {
   header i {
     font-size: 1.6em;
-    padding: 0px 10px;
+    padding: 0px 6px;
   }
   header nav P {
     display: none;
@@ -647,10 +786,6 @@ main section.projectos{
   nav li::after {
   content: "";
   }
-  main .sobre{
-    display: flex;
-    flex-direction: column-reverse;
-  }
   nav li:hover::after {
     width: 0;
   }
@@ -659,28 +794,64 @@ main section.projectos{
     scale: 1.09;
     transition: .1s ease-in-out;
   }
-  main .sobre .imagem {
+  main .inicial .imagem {
   padding-left: 0px;
 }
-  main .sobre .imagem img {
+  main .inicial .imagem img {
     width: auto;
     height: 300px;
     border-radius: 0%;
     background: none;
+    outline: none;
+    border: none;
   }
-    .sobre .resumo p:nth-child(1){
+    .inicial .resumo p:nth-child(1){
     text-align: left;
   }
-  .sobre .resumo p:nth-child(1) #eu{
-    font-size: 2em;
+  .inicial .resumo p:nth-child(1) #eu{
+    font-size: 1.8rem;
   }
   main .trabalho{
     text-align: center;
   }
 }
-@media screen and (max-width: 520px){
-  header .logo p {
-    font-size: 1em;
-    transition: font-size .3s ease-in-out;
+
+@media screen and (max-width: 785px) {
+  main .inicial{
+    flex-direction: column-reverse;
+  }
+  .sobre .minha-info{
+    grid-template-columns: auto;
+  }
+  body main section.inicial div.resumo div.social{
+    margin-bottom: 15px;
+  }
+  header nav i:hover::after{
+    color: black;
+    font-size: 18px;
+    font-family: "poppins";
+    font-weight: normal;
+    width: 100%;
+    background-color: BLUE;
+    position: absolute;
+    border-radius: 10px;
+    bottom: 0;
+    right: 0;
+    transition: all 2s ease-in-out;
+  }
+  header nav i:nth-child(1):hover::after{
+    content: "";
+  }
+  header nav i:nth-child(2):hover::after{
+    content: "About";
+  }
+  header nav i:nth-child(3):hover::after{
+    content: "Projects";
+  }
+  header nav i:nth-child(4):hover::after{
+    content: "Services";
+  }
+  header nav i:nth-child(5):hover::after{
+    content: "Contact";
   }
 }

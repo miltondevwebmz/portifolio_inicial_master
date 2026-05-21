@@ -1,15 +1,19 @@
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- <meta http-equiv="refresh" locale="3.0"> -->
     <title>Meu Portifólio</title>
-    <link rel="stylesheet" href="estilo.css">
     <link rel="stylesheet" href="fontawesome-free-6.6.0-web/css/all.min.css"><!-- OFFLINE -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"><!-- ONLINE -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+    <!-- ONLINE -->
+    <link rel="stylesheet" href="estilo.css">
+
 </head>
-<body>
-    <div class="tema" onclick="toggle()"><i class="fas fa-gear"></i></div>
+
+<body id="inicio">
     <header>
         <div class="logo">
             <p></p>
@@ -18,14 +22,20 @@
             <ul>
                 <li>
                     <a href="#inicio">
-                        <i class="fas fa-home"></i>
+                        <i data-name="home" class="fas fa-home"></i>
                         <p>Inicio</p>
                     </a>
                 </li>
                 <li>
                     <a href="#sobre">
-                        <i class="fas fa-info-circle"></i>
+                        <i data-name="About" class="fas fa-user-large"></i>
                         <P>Sobre</P>
+                    </a>
+                </li>
+                <li>
+                    <a href="#projectos">
+                        <i data-name="Projectos" class="fas fa-box"></i>
+                        <p>Projectos</p>
                     </a>
                 </li>
                 <li>
@@ -35,42 +45,82 @@
                     </a>
                 </li>
                 <li>
-                    <a href="#projectos">
-                        <i class="fas fa-box"></i>
-                        <p>Projectos</p>
+                    <a href="#trabalho">
+                        <i class="fas fa-phone"></i>
+                        <p>Contactar</p>
                     </a>
                 </li>
                 <li>
-                    <a href="#contactos">
-                        <i class="fas fa-phone"></i>
-                        <p>Contacto</p>
-                    </a>
+                    <div class="tema" onclick="toggle()">
+                        <img class="fa-sun" src="imagens/sun.svg">
+                        <img class="fa-moon" src="imagens/moon.svg">
+                    </div>
                 </li>
             </ul>
         </nav>
     </header>
 
     <!-- corpo / conteudo -->
-    <main  id="inicio">
-        <h1>Desenvolvedor <br> <span>Web</span></h1>
-        <section class="sobre" id="sobre">
+    <main>
+        <h1 class="dev">Desenvolvedor <br> <span>Web</span></h1>
+        <section class="inicial" id="inicial">
             <div class="resumo">
                 <p>Olá, eu sou <span id="eu"> Milton Cumba</span></p>
-                <p>Sou <span>Desenvolvedor Fullstack & Freelancer</span>. Apaixonado pela tecnologia, sou formado em <b>Programação em Aplicação Web</b>, e tenho desenvolvido pequenos projectos para impulsionar os meus conhecimentos no mundo da programação.</p>
+                <p>Sou <span>Desenvolvedor Fullstack & Freelancer</span>. Apaixonado pela tecnologia, sou formado em
+                    <b>Programação em Aplicação Web</b>, e tenho desenvolvido pequenos projectos para impulsionar os
+                    meus conhecimentos no mundo da programação.
+                </p>
                 <div class="flutuar">
-                    <a href="Milton CV.pdf"><i class="fas fa-download"></i>Baixar curriculo</a>
+                    <a href="Milton_Cumba_cv.pdf" downloa="" target="_blank"><i class="fas fa-download"></i>Baixar curriculo</a>
                 </div>
                 <div class="social">
-                    <a href="mailto:miltonamonecumba@gmail.com?subject=Contacto&body=Olá, gostaria de falar contigo." class="mail"><i class="far fa-envelope-open"></i></a>
-                    <a href="https://wa.me/+258873890211" class="whatsapp"><i class="fab fa-whatsapp"></i></a>
-                    <a href="https://github.com/miltondevwebmz" class="github"><i class="fab fa-github"></i></a>
-                    <a href="https://www.linkedin.com/in/milton-websuporte" class="linked"><i class="fab fa-linkedin"></i></a>
+                    <a href="mailto:miltonamonecumba@gmail.com?subject=Contacto&body=Olá, gostaria de falar contigo."
+                        class="mail" target="_blank"><i class="far fa-envelope-open"></i></a>
+                    <a href="https://wa.me/+258873890211" class="whatsapp" target="_blank"><i
+                            class="fab fa-whatsapp"></i></a>
+                    <a href="https://github.com/miltondevwebmz" class="github" target="_blank"><i
+                            class="fab fa-github"></i></a>
+                    <a href="https://www.linkedin.com/in/milton-websuporte" class="linked" target="_blank"><i
+                            class="fab fa-linkedin"></i></a>
                 </div>
             </div>
             <div class="imagem">
                 <img src="imagens/eu.png" alt="minha foto">
+                <!-- <div class="cartao">
+                    <span>
+                        &lth3&gtOlá mundo!&lt/h3&gt <br>
+                        &ltp&gtLorem ipsum...&lt/p&gt
+                    </span>
+                </div> -->
             </div>
         </section>
+
+        <section class="sobre" id="sobre">
+            <h2 class="padding">Sobre mim</h2>
+            <div class="minha-info">
+                <section class="informacao">
+                    <h3>&lt&gtMilton Dev Web 😎&lt/&gt</h1>
+                        <p>Milton Amone Cumba. Nascido aos 30 de Março de 2004 e natural de Maputo-Mozambique. </p>
+                        <p>Sou graduado e formado em <span>Programação em Aplicação Web</span> pelo Instituto Médio Politécnico de Engenharia & Negócios</st> em 2024 - 2025. Na mesma instituição possuo o curso de <span>Técnico de Suporte Informático</span> em 2023. Tenho feito cursos extras para enriquecer os meus conhecimentos e capacidades transversais como o curso de <span>Atendimento ao Cliente</span> na Escola de Comuicação e Artes UEM e o curso de <span>Secretariado Executivo</span> pela Ajudemos Moçambique.</p>
+                        <p>Nos meus hobbies costumo: estudar programação, jogar videogames, ler a Bíblia e meditar pois sou Cristão.</p>
+                </section>
+                <section class="diferenciais">
+                    <h3>Diferenciais</h3>
+                    <div class="dif-itens">
+                        <p><i class="fas fa-laptop-file"></i>Proficiência em TICs</p>
+                        <p><i class="fas fa-people-group"></i>Trabalho em equipa</p>
+                        <p><i class="fas fa-keyboard"></i>Habilidades em digitação</p>
+                        <p><i class="fas fa-rocket"></i>Aprendizado contínuo</p>
+                        <p><i class="fas fa-code"></i>Stack Tecnológico</p>
+                        <p><i class="fas fa-comments"></i>Boa comunicação</p>
+                        <p><i class="fas fa-bolt"></i>Proatividade</p>
+                        <p><i class="fas fa-brain"></i>Versatilidade</p>
+                        <!-- <p><i class="fas fa-cube"></i>Versatilidade</p> -->
+                    </div>
+                </section>
+            </div>
+        </section>
+
         <section class="">
             <div class="ferramentas">
                 <h2>Tecnologias e Frameworks
@@ -84,7 +134,7 @@
                     <li><i class="fab fa-js" style="color: #f0db4f;"></i><br>JavaScript</li>
                     <li><i class="fab fa-php" style="color: #8892be;"></i><br>PHP</li>
                     <li><i class="fas fa-database" style="color: #00758f;"></i><br>MySQL</li>
-                    <li><i class="fas fa-vector-square"  style="color: #0ea5e9;"></i><br>Flex Box</li>
+                    <li><i class="fas fa-vector-square" style="color: #0ea5e9;"></i><br>Flex Box</li>
                     <li><i class="fas fa-border-all" style="color: #6c757d;"></i><br>Grid</li>
                     <li><i class="fab fa-sass" style="color: #cd6799;"></i><br>SCSS</li>
                     <li><i class="fab fa-less" style="color: #1d365d;"></i><br>LESS</li>
@@ -92,23 +142,23 @@
                     <li><i class="fas fa-code" style="color: #0769ad;"></i><br>jQuery</li>
                     <li><i class="fas fa-sync" style="color: #4b6eaf;"></i><br>Ajax</li>
                     <li><i class="fas fa-plug" style="color: #f57c00;"></i><br>API's</li>
-                    <li><i class="fas fa-robot"  style="color: #00BFA6;"></i><br>IA</li>
+                    <li><i class="fas fa-robot" style="color: #00BFA6;"></i><br>IA</li>
                     <li><i class="fab fa-git-alt" style="color: red;"></i><br>Git</li>
                     <li><i class="fab fa-github" style="color: #7f2f98;"></i><br>GitHub</li>
                 </ul>
             </div>
             </div>
-        </section><hr>
+        </section>
 
         <section class="projectos" id="projectos">
-            <h2>Projectos
+            <h2 class="padding">Projectos
                 <span class="pontos">
                     <span></span><span></span><span></span><span></span><span></span><span></span>
                 </span>
             </h2>
             <div class="card">
                 <div class="cards">
-                    <img src="imagens/jogo_do_clique.png" alt="pong" >
+                    <img src="imagens/jogo_do_clique.png" alt="pong">
                     <div class="descricao">
                         <ul>
                             <li>html</li>
@@ -121,16 +171,19 @@
                             <li style="display: none;"></li>
                         </ul>
                         <h4>Jogo do Click</h4>
-                        <P>Jogo simples de reflexo onde o jogador é desafiado a clicar num botão durante um tempo limite. O sistema conta os cliques e apresenta o resultado final ao terminar o cronómetro.</P>
-                        <!-- <p>Jogo simples que desafia o jogador a clicar o máximo possível antes do tempo acabar. Mostra a contagem dos clicques e resultados finais.</p> -->
+                        <P>Jogo simples de reflexo onde o jogador é desafiado a clicar num botão durante um tempo
+                            limite. O sistema conta os cliques e apresenta o resultado final ao terminar o cronómetro.
+                        </P>
                     </div>
                     <div class="botao">
-                        <a href="https://github.com/miltondevwebmz/Jogo_De_Click"><i class="fab fa-github"></i>ver</a>
-                        <a href="https://miltondevwebmz.github.io/Jogo_De_Click/"><i class="fas fa-eye"></i>testar</a>
+                        <a href="https://github.com/miltondevwebmz/Jogo_De_Click" target="_blank"><i
+                                class="fab fa-github"></i>ver</a>
+                        <a href="https://miltondevwebmz.github.io/Jogo_De_Click/" target="_blank"><i
+                                class="fas fa-eye"></i>testar</a>
                     </div>
                 </div>
                 <div class="cards">
-                    <img src="imagens/jogo_da_velha.png" alt="jogo da velha" >
+                    <img src="imagens/jogo_da_velha.png" alt="jogo da velha">
                     <div class="descricao">
                         <ul>
                             <li>html</li>
@@ -143,15 +196,18 @@
                             <li style="display: none;"></li>
                         </ul>
                         <h4>Jogo da velha</h4>
-                        <p>Implemeteção digital do classico <strong>X/O</strong> para dois jogadores. Inclue verificação automática de vitória, empate e actualização dinâmica do estado do tabuleiro.</p>
+                        <p>Implemeteção digital do classico <strong>X/O</strong> para dois jogadores. Inclue verificação
+                            automática de vitória, empate e actualização dinâmica do estado do tabuleiro.</p>
                     </div>
                     <div class="botao">
-                        <a href="https://github.com/miltondevwebmz/jogo-da-velha"><i class="fab fa-github"></i>ver</a>
-                        <a href="https://miltondevwebmz.github.io/jogo-da-velha/"><i class="fas fa-eye"></i>testar</a>
+                        <a href="https://github.com/miltondevwebmz/jogo-da-velha" target="_blank"><i
+                                class="fab fa-github"></i>ver</a>
+                        <a href="https://miltondevwebmz.github.io/jogo-da-velha/" target="_blank"><i
+                                class="fas fa-eye"></i>testar</a>
                     </div>
                 </div>
                 <div class="cards">
-                    <img src="imagens/pong.png" alt="pong" >
+                    <img src="imagens/pong.png" alt="pong">
                     <div class="descricao">
                         <ul>
                             <li>html</li>
@@ -164,15 +220,61 @@
                             <li style="display: none;"></li>
                         </ul>
                         <h4>Pong Simples</h4>
-                        <p>Jogo inspirado  no clássico Pong. Dois jogadores tentam rebater a bola e marcar pontos. Ensina lógica de movimentos, colisões e controlo de pontuação.</p>
+                        <p>Jogo inspirado no clássico Pong. Dois jogadores tentam rebater a bola e marcar pontos. Ensina
+                            lógica de movimentos, colisões e controlo de pontuação.</p>
                     </div>
                     <div class="botao">
-                        <a href="https://github.com/miltondevwebmz/pong"><i class="fab fa-github"></i>ver</a>
-                        <a href="https://miltondevwebmz.github.io/pong/"><i class="fas fa-eye"></i>testar</a>
+                        <a href="https://github.com/miltondevwebmz/pong" target="_blank"><i
+                                class="fab fa-github"></i>ver</a>
+                        <a href="https://miltondevwebmz.github.io/pong/" target="_blank"><i
+                                class="fas fa-eye"></i>testar</a>
+                    </div>
+                </div>
+                <div class="cards" style="display: none;">
+                    <img src="imagens/landing.png" alt="pong">
+                    <div class="descricao">
+                        <ul>
+                            <li>html</li>
+                            <li>css</li>
+                            <li>js</li>
+                            <li style="display: none;"></li>
+                            <li style="display: none;"></li>
+                            <li style="display: none;"></li>
+                            <li style="display: none;"></li>
+                            <li style="display: none;"></li>
+                        </ul>
+                        <h4>Landing Page</h4>
+                        <p>Minha primeria página de captura de leads para conseguir clientes. Ela mostra os meus
+                            serviços relacionados a suporte académico para diferentes níveis de estudantes.</p>
+                    </div>
+                    <div class="botao">
+                        <a href="https://github.com/miltondevwebmz/pong" target="_blank"><i class="fab fa-github"></i>ver</a>
+                        <a href="https://miltondevwebmz.github.io/pong/" target="_blank"><i class="fas fa-eye"></i>testar</a>
                     </div>
                 </div>
                 <div class="cards">
-                    <img src="imagens/portfolio.png" alt="Portifolio Pessoal" >
+                    <img src="imagens/portfolio.png" alt="Portifolio Pessoal">
+                    <div class="descricao">
+                        <ul>
+                            <li>html</li>
+                            <li>css</li>
+                            <li>js</li>
+                            <li style="display: none;"></li>
+                            <li style="display: none;"></li>
+                            <li style="display: none;"></li>
+                            <li style="display: none;"></li>
+                            <li>less</li>
+                        </ul>
+                        <h4>Landing Page</h4>
+                        <p>Website desenvolvido para apresentar meus projetos, competências e informações profissionais. Estruturado com foco em organanização, design limpo e navegação simples.</p>
+                    </div>
+                    <div class="botao">
+                        <a href="https://github.com/miltondevwebmz/portifolio_inicial_master" target="_blank"><i class="fab fa-github"></i>ver</a>
+                        <a href="https://miltondevwebmz.github.io/portifolio_inicial_master/" target="_blank"><i class="fas fa-eye"></i>testar</a>
+                    </div>
+                </div>
+                <div class="cards">
+                    <img src="imagens/portfolio.png" alt="Portifolio Pessoal">
                     <div class="descricao">
                         <ul>
                             <li>html</li>
@@ -188,12 +290,33 @@
                         <p>Website desenvolvido para apresentar meus projetos, competências e informações profissionais. Estruturado com foco em organanização, design limpo e navegação simples.</p>
                     </div>
                     <div class="botao">
-                        <a href="https://github.com/miltondevwebmz/portifolio_inicial_master"><i class="fab fa-github"></i>ver</a>
-                        <a href="https://miltondevwebmz.github.io/portifolio_inicial_master/"><i class="fas fa-eye"></i>testar</a>
+                        <a href="https://github.com/miltondevwebmz/portifolio_inicial_master" target="_blank"><i class="fab fa-github"></i>ver</a>
+                        <a href="https://miltondevwebmz.github.io/portifolio_inicial_master/" target="_blank"><i class="fas fa-eye"></i>testar</a>
                     </div>
                 </div>
                 <div class="cards">
-                    <img src="imagens/dashboard.png" alt="pong" >
+                    <img src="imagens/portfolio.png" alt="Portifolio Pessoal">
+                    <div class="descricao">
+                        <ul>
+                            <li>html</li>
+                            <li>css</li>
+                            <li>js</li>
+                            <li style="display: none;"></li>
+                            <li style="display: none;"></li>
+                            <li style="display: none;"></li>
+                            <li style="display: none;"></li>
+                            <li>less</li>
+                        </ul>
+                        <h4>Galeria vlog de Históris</h4>
+                        <p>Website desenvolvido para apresentar meus projetos, competências e informações profissionais. Estruturado com foco em organanização, design limpo e navegação simples.</p>
+                    </div>
+                    <div class="botao">
+                        <a href="https://github.com/miltondevwebmz/portifolio_inicial_master" target="_blank"><i class="fab fa-github"></i>ver</a>
+                        <a href="https://miltondevwebmz.github.io/portifolio_inicial_master/" target="_blank"><i class="fas fa-eye"></i>testar</a>
+                    </div>
+                </div>
+                <div class="cards">
+                    <img src="imagens/dashboard.png" alt="pong">
                     <div class="descricao">
                         <ul>
                             <li>html</li>
@@ -210,14 +333,14 @@
                         <p>Sistema adequado para lojas com gestão eficiente de inventário, processamento de pedidos e acompanhamento das vendas. Gerecniamento de vendas, estoque e clientes.</p>
                     </div>
                     <div class="botao">
-                        <a href="projecto.html"><i class="fab fa-github"></i>ver</a>
+                        <a href="projecto.html" target="_blank"><i class="fab fa-github"></i>ver</a>
                     </div>
                 </div>
             </div>
-        </section><hr>
+        </section>
 
         <section class="servicos" id="servicos">
-            <h2>Serviços
+            <h2 class="padding">Serviços
                 <span class="pontos">
                     <span></span><span></span><span></span><span></span><span></span><span></span>
                 </span>
@@ -260,79 +383,77 @@
                     <div class="button">Saiba mais!</div>
                 </div>
             </div>
-        </section><hr>
+        </section>
 
 
-            <div class="trabalho">
-                <p style="text-align: center;">Nescessita de um desenvolvedor frontend?</p>
-                <h1>Vamos trabalhar juntos</h1>
-            </div>
+        <div class="trabalho" id="trabalho">
+            <p style="text-align: center;">Nescessita de um desenvolvedor frontend?</p>
+            <h1>Vamos trabalhar juntos</h1>
+        </div>
 
-    <footer id="contactos">
-        <div class="rodape">
-            <div class="itens">
-                <h3>Links</h3>
-                <ul>
-                    <li><a href="#inicio">Início</a></li>
-                    <li><a href="#sobre">Sobre</a></li>
-                    <li><a href="#servicos">Serviços</a></li>
-                    <li><a href="#projectos">Projectos</a></li>
-                    <li><a href="#contacto">Contactos</a></li>
-                </ul>
-            </div>
-            <div class="itens">
+        <footer id="contactos">
+            <div class="rodape">
+                <div class="itens">
+                    <h3>Links</h3>
+                    <ul>
+                        <li><a href="#inicio">Início</a></li>
+                        <li><a href="#sobre">Sobre</a></li>
+                        <li><a href="#servicos">Serviços</a></li>
+                        <li><a href="#projectos">Projectos</a></li>
+                        <li><a href="#contacto">Contactos</a></li>
+                    </ul>
+                </div>
+                <div class="itens">
                     <h3>Redes Sociais</h3>
                     <ul>
                         <li>
-                        <a href="https://www.facebook.com/raynreynolds.mylton">
-                            <i class="fab fa-facebook"></i>
-                            <span>Facebook</span>
-                        </a>
-                    </li>
+                            <a href="https://www.facebook.com/raynreynolds.mylton" target="_blank">
+                                <i class="fab fa-facebook"></i>
+                                <span>Facebook</span>
+                            </a>
+                        </li>
                         <li>
-                        <a href="https://www.instagram.com/mylton_mxtx">
-                            <i class="fab fa-instagram"></i>
-                            <span>Instagram</span>
-                        </a>
-                    </li>
+                            <a href="https://www.instagram.com/mylton_mxtx" target="_blank">
+                                <i class="fab fa-instagram"></i>
+                                <span>Instagram</span>
+                            </a>
+                        </li>
                         <li>
-                        <a href="https://www.linkedin.com/in/milton-websuporte">
-                            <i class="fab fa-linkedin"></i>
-                            <span>LinkedIn</span>
-                        </a>
-                    </li>
+                            <a href="https://www.linkedin.com/in/milton-websuporte" target="_blank">
+                                <i class="fab fa-linkedin"></i>
+                                <span>LinkedIn</span>
+                            </a>
+                        </li>
                         <li>
-                        <a href="https://github.com/miltondevwebmz">
-                            <i class="fab fa-github"></i>
-                            <span>GitHub</span> 
-                        </a>
-                    </li>
+                            <a href="https://github.com/miltondevwebmz" target="_blank">
+                                <i class="fab fa-github"></i>
+                                <span>GitHub</span>
+                            </a>
+                        </li>
                         <li>
-                        <a href="https://wa.me/258873890211">
-                            <i class="fab fa-whatsapp"></i>
-                            <span>WhatsApp</span>
-                        </a>
-                    </li>
-                </ul>
+                            <a href="https://wa.me/258873890211" target="_blank">
+                                <i class="fab fa-whatsapp"></i>
+                                <span>WhatsApp</span>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="itens">
+                    <h3>Endereço & Contacto</h3>
+                    <ul>
+                        <li>Maputo - Khongolote <br>Moçambique</li>
+                        <li>+258 873890211</li>
+                        <li>+258 856956880</li>
+                        <li>+258 833363004</li>
+                    </ul>
+                </div>
             </div>
-            <div class="itens">
-                <h3>Endereço</h3>
-                <ul>
-                    <li>Maputo - Khongolote <br>Moçambique</li>
-                    <li>+258 873890211</li>
-                    <li>+258 856956880</li>
-                    <li>+258 833363004</li>
-                </ul>
-            </div>
-        </div>
-        
-    </footer>
-    
-    <div class="direitos">
-        <p>&#169 2026 | Todos direitos reservados por <br> Milton Dev Web Mz</p>
-    </div>
-    </main>
+        </footer>
 
+        <div class="direitos">
+            <p>&#169 2026 | Todos direitos reservados por <br> Milton Dev Web Mz</p>
+        </div>
+    </main>
     <script src="script.js"></script>
 </body>
 </html>
