@@ -36,7 +36,7 @@
 
   transition: all 0.4s;
 }
-body.light {
+body.dark {
   --bg-dark: hsl(0, 0%, 0%);
   --bg: hsl(0, 0%, 5%);
   --bg-light: hsl(0, 0%, 10%);
@@ -72,6 +72,8 @@ h2{
 html {
   scroll-behavior: smooth;
   scroll-padding-top: 90px;
+  overflow: auto;
+  scrollbar-width: none;
 }
 body {
   background-color: var(--bg-dark);
@@ -359,7 +361,6 @@ main .inicial .resumo .social{
 .social a:hover{
   scale: 1.1;
   box-shadow: 0 0 15px var(--glow-hover);
-
   transition: .2s ease-in-out;
 }
 .social .mail{
@@ -478,7 +479,6 @@ main section.projectos{
   flex-flow: row wrap;
   justify-content: space-around;
   border-radius: 9px;
-
 }
 
 .cards {
@@ -486,17 +486,43 @@ main section.projectos{
   margin: 7px;
   border-radius: 9px;
   flex: 1 0 300px;
-  
   animation: rolagem linear;
   animation-timeline: view();
   animation-range: entry 0% cover 10%;
   transition: 0.3s ease;
+}
+.b{
+  display: block;
+  width: 100%;
+  text-align: center;
 }
 .cards:hover{
   /* scale: 1.05; */
   transform: translateY(-5px);
   transition: .2s ease-in-out;
   cursor: grab;
+}
+.cards:nth-child(n+3){
+  display: none;
+}
+.cards.mostrar{
+  display: block;
+}
+#verBtn{
+  margin: 5px;
+  border-radius: 8px;
+  cursor: pointer;
+  padding: 10px 20px;
+  border: 1px solid transparent;
+  outline: none;
+  background-color: var(--secundario);
+  color: var(--bg-dark);
+  transition: .2s ease-in-out;
+}
+#verBtn:hover{
+  background-color: transparent;
+  color:var(--text-muted);
+  border: 1px solid var(--secundario);
 }
 .cards img{
   width: 100%;
@@ -579,14 +605,12 @@ main section.projectos{
   cursor: pointer;
   background-color: var(--text-muted);
   color: var(--bg-dark);
-
   transition: .2s ease-out;
 }
 .botao i{
   padding-right: 10px;
   font-size: 1.2rem;
 }
-
 
 /* ----------------------------servicos------------------------- */
 
@@ -604,7 +628,6 @@ main section.projectos{
   background-color: var(--bg-light);
   border: 1px solid var(--bg);
   box-shadow: 0 0 5px var(--text-muted);
-
   animation: rolagem linear;
   animation-timeline: view();
   animation-range: entry 0% cover 20%;
@@ -709,6 +732,9 @@ main section.projectos{
 .rodape .itens:nth-child(2) ul li:hover{
   background-color: var(--text-muted);
 }
+.rodape #call li a:hover{
+  color: var(--secundario);
+}
 .direitos {
   text-align: center;
   margin: 20px 1px 5px 1px;
@@ -716,21 +742,6 @@ main section.projectos{
   color: var(--text);
   width: 100%;
   transition: 0.7s;
-  /* position: fixed;
-  top: 0;
-  left: 0;
-  z-index: 9; */
-  /* display: flex;
-  justify-content: center;
-  text-align: center;
-  background-color: var(--bg-light);
-  color: var(--text);
-  font-size: 1.1em;
-  width: 100%;
-  border: 1px solid black;
-  box-shadow: 0px -8px 8px var(--text-muted);
-  padding: 10px;
-  font-weight: 300; */
 }
 
 /* media para telefone */
