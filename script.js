@@ -10,7 +10,7 @@ function toggle() {
 // abrir menu automaticamente em telas grandes e fechar automaticamente em telas pequenas
 
 const btn = document.getElementById('verBtn')
-const cardsEscondidos = document.querySelectorAll('.cards:nth-child(n+3)')
+const cardsEscondidos = document.querySelectorAll('.cards:nth-child(n+4)')
 let expandido = false
 
 btn.addEventListener('click', () => {

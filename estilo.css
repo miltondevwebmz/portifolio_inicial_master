@@ -72,8 +72,8 @@ h2{
 html {
   scroll-behavior: smooth;
   scroll-padding-top: 90px;
-  overflow: auto;
-  scrollbar-width: none;
+  /* overflow: auto;
+  scrollbar-width: none; */
 }
 body {
   background-color: var(--bg-dark);
@@ -117,7 +117,7 @@ header .logo p::before {
   border-bottom-left-radius: 10px;
   width: fit-content;
   background: var(--text);
-  -webkit-background-clip: text;
+  background-clip: text;
   -webkit-text-fill-color: transparent;
 }
 header .logo p::after {
@@ -125,7 +125,7 @@ header .logo p::after {
   border-bottom: 0.2em dotted /*dashed*/ var(--text);
   width: fit-content;
   background: var(--text);
-  -webkit-background-clip: text;
+  background-clip: text;
   -webkit-text-fill-color: transparent;
 }
 header nav ul {
@@ -392,7 +392,6 @@ main .inicial .resumo .social{
   text-align: justify;
   line-height: 1.9;
   text-indent: 20px;
-  
 }
 .sobre .dif-itens{
   display: grid;
@@ -502,7 +501,7 @@ main section.projectos{
   transition: .2s ease-in-out;
   cursor: grab;
 }
-.cards:nth-child(n+3){
+.cards:nth-child(n+4){
   display: none;
 }
 .cards.mostrar{
@@ -717,7 +716,7 @@ main section.projectos{
 }
 .rodape .itens:nth-child(2) ul li:nth-child(2) a{
   background: linear-gradient(45deg, #F58529, #DD2A7B, #8134AF, #515BD4);
-  -webkit-background-clip: text;
+  background-clip: text;
   -webkit-text-fill-color: transparent;
 }
 .rodape .itens:nth-child(2) ul li:nth-child(3) a{
@@ -828,6 +827,9 @@ main section.projectos{
 }
 
 @media screen and (max-width: 785px) {
+  .padding{
+    margin:2x;
+  }
   main .inicial{
     flex-direction: column-reverse;
   }
