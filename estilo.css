@@ -379,7 +379,25 @@ main .inicial .resumo .social{
   color: rgb(0, 136, 255);
   border: 1px solid rgb(0, 136, 255);
 }
+.social .ver-projecto{
+  /* background-image: linear-gradient(90deg, var(--secundario), var(--principal)); */
+  background-color: transparent;
+  color: var(--secundario);
+  text-decoration: none;
+  padding: 10px;
+  font-size: 1.15rem;
+  border-radius: 10px;
+  border: 1px solid var(--secundario);
+  text-align: center;
+  transition: 0.2s ease;
+}
+.social .ver-projecto:hover{
+  scale: 1;
+  box-shadow: none;
+  border: 1px solid var(--text);
+  background-color: transparent;
 
+}
 /* -----------ferramentas----------- */
 .sobre .minha-info{
   display: grid;
@@ -606,6 +624,12 @@ main section.projectos{
   color: var(--bg-dark);
   transition: .2s ease-out;
 }
+.botao a:nth-child(1):hover{
+  cursor: pointer;
+  background-color: var(--github);
+  color: var(--bg-dark);
+  transition: .2s ease-out;
+}
 .botao i{
   padding-right: 10px;
   font-size: 1.2rem;
@@ -620,13 +644,22 @@ main section.projectos{
   border-color: yellow;
   padding: 20px 5px;
 }
+.titulo-servico{
+  font-size: 1.2rem;
+  border-radius: 25px;
+  /* width: fit-content; */
+  text-align: center;
+  padding: 8px 12px;
+  margin-top: 10px;
+  background-image: linear-gradient(90deg, var(--secundario), var(--principal));
+  color: black;
+}
 .item {
   text-align: center;
   padding: 15px;
   border-radius: 10px;
   background-color: var(--bg-light);
-  border: 1px solid var(--bg);
-  box-shadow: 0 0 5px var(--text-muted);
+  /* box-shadow: 0 0 1px var(--text-muted); */
   animation: rolagem linear;
   animation-timeline: view();
   animation-range: entry 0% cover 20%;
@@ -659,6 +692,7 @@ main section.projectos{
 .item p{
   margin-bottom: 10px;
   color: var(--text-muted);
+  font-size: .9rem;
 }
 .item .button {
   font-family: "lato";
@@ -815,7 +849,7 @@ main section.projectos{
     outline: none;
     border: none;
   }
-    .inicial .resumo p:nth-child(1){
+  .inicial .resumo p:nth-child(1){
     text-align: left;
   }
   .inicial .resumo p:nth-child(1) #eu{
@@ -823,6 +857,15 @@ main section.projectos{
   }
   main .trabalho{
     text-align: center;
+  }
+  .social i{
+    font-size: .9rem;
+  }
+  .social .ver-projecto{
+    font-size: .8rem;
+  }
+  .titulo-servico{
+    font-size: 1rem;
   }
 }
 

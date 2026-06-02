@@ -2,3 +2,46 @@ ESLint
 Better Comments
 CSS Peek - 
 cordenadas 25º51'12.1"S 32º32'43.1"E
+
+1. *Criação de Portfólios e de Landing Pages*
+
+*Variação Técnica:*  
+Desenvolvo portfólios e landing pages 100% em código puro - HTML, CSS e JavaScript. Foco em design responsivo, carregamento rápido e estrutura otimizada para conversão. Entrego o projeto pronto pra publicar, com código limpo e fácil de manter.
+
+*Variação Simples:*  
+Crio sites simples e bonitos pra mostrar teu trabalho ou vender um produto/serviço. Tudo rápido, leve e que funciona bem no celular. Tu recebe o site pronto pra usar, sem complicação.
+
+---
+
+2. *Construção de Páginas Dinâmicas e Estáticas*
+
+*Variação Técnica:*  
+Construo páginas estáticas otimizadas e sistemas dinâmicos usando PHP + MySQL. Integro formulários, áreas de login, e lógica de negócio no backend. Ideal pra quem precisa de mais que uma página estática.
+
+*Variação Simples:*  
+Faço sites que mostram informação fixa e também sistemas que salvam dados, fazem login e interagem com o usuário. Se precisas de algo além de uma página normal, eu resolvo.
+
+---
+
+3. *Desenvolvimento de Softwares/Sistemas*
+
+*Variação Técnica:*  
+Desenvolvo sistemas web sob medida: gestão de vendas, controle de estoque, monitoramento de clientes e sistemas de pagamento. Uso PHP e MySQL no backend, com painel administrativo funcional e seguro.
+
+*Variação Simples:*  
+Crio sistemas pra organizar teu negócio: controlar vendas, estoque, clientes e pagamentos. Tudo roda no navegador, sem precisar instalar nada complicado.
+
+---
+
+4. *Hospedagem Local de Páginas & Websites*
+
+*Variação Técnica:*  
+Faço deploy e configuração do teu site em plataformas como Vercel, Netlify e GitHub Pages. Configuro domínio, HTTPS e otimizações básicas pra deixar online rápido e estável.
+
+*Variação Simples:*  
+Deixo teu site no ar pra todo mundo acessar. Uso plataformas gratuitas e confiáveis, configuro tudo e te entrego o link funcionando.
+
+---
+
+*Sobre os diferenciais que mencionaste:*  
+Posso adicionar uma linha final em todos tipo: _"Inclui manutenção grátis por 30 dias, entrega rápida e preços acessíveis."_ 
